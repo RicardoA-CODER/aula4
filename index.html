@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades JavaScript</title>
+    <link rel="stylesheet" href="css.03">
+</head>
+<body>
+    <h1>Atividades JavaScript</h1>
+    
+    <!-- Atividade 1: Mensagem 'Olá Mundo' -->
+    <div class="box">
+        <h2>1. Mensagem 'Olá Mundo'</h2>
+        <button onclick="helloWorld()">Clique para ver a mensagem</button>
+        <p id="helloOutput"></p>
+    </div>
+    
+    <!-- Atividade 2: Soma de 2 inteiros -->
+    <div class="box">
+        <h2>2. Soma de 2 inteiros</h2>
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2">
+        <button onclick="somar()">Somar</button>
+        <p id="sumOutput">Resultado: </p>
+    </div>
+    
+    <!-- Atividade 3: Alterar por ID -->
+    <div class="box">
+        <h2>3. Alterar propriedade por ID</h2>
+        <p id="textToChange">Este texto será alterado quando você clicar no botão.</p>
+        <button onclick="changeById()">Alterar texto</button>
+    </div>
+    
+    <!-- Atividade 4: Alterar por NAME -->
+    <div class="box">
+        <h2>4. Alterar propriedade por NAME</h2>
+        <p name="nameElement">Este elemento será alterado pelo atributo name.</p>
+        <button onclick="changeByName()">Alterar cor</button>
+    </div>
+    
+    <!-- Atividade 5: Alterar por CLASS -->
+    <div class="box">
+        <h2>5. Alterar propriedade por CLASS</h2>
+        <p class="highlight">Este elemento tem uma classe que será alterada.</p>
+        <p class="highlight">Outro elemento com a mesma classe.</p>
+        <button onclick="changeByClass()">Alterar todos</button>
+    </div>
+
+    <script>
+        // Atividade 1: Mensagem 'Olá Mundo'
+        function helloWorld() {
+            document.getElementById('helloOutput').textContent = 'Olá Mundo!';
+        }
+        
+        // Atividade 2: Soma de 2 inteiros
+        function somar() {
+            const num1 = parseInt(document.getElementById('num1').value) || 0;
+            const num2 = parseInt(document.getElementById('num2').value) || 0;
+            const soma = num1 + num2;
+            document.getElementById('sumOutput').textContent = `Resultado: ${soma}`;
+        }
+        
+        // Atividade 3: Alterar por ID
+        function changeById() {
+            const element = document.getElementById('textToChange');
+            element.textContent = 'Texto alterado com sucesso usando ID!';
+            element.style.color = 'red';
+        }
+        
+        // Atividade 4: Alterar por NAME
+        function changeByName() {
+            const elements = document.getElementsByName('nameElement');
+            for (let element of elements) {
+                element.style.color = 'blue';
+                element.style.fontWeight = 'bold';
+            }
+        }
+        
+        // Atividade 5: Alterar por CLASS
+        function changeByClass() {
+            const elements = document.getElementsByClassName('highlight');
+            for (let element of elements) {
+                element.style.backgroundColor = 'lightgreen';
+                element.style.padding = '15px';
+            }
+        }
+    </script>
+</body>
+</html>
